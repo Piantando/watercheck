@@ -35,11 +35,7 @@ var speedUP=false;
 
 var infoButton, seeCode;
 var pressInfo=false;
-var soundButton;
 var restartButton;
-var shareButton;
-var pressShare=false;
-var fbButton, twButton, pinButton;
 
 // DROP
 var dropx;
@@ -109,17 +105,11 @@ function preload() {
     iron = loadImage('images/iron.png');
     LaundryBack = loadImage('images/laundry.png');
     myTub=loadImage("images/wastetub.png");
-    mySound = loadSound('sound/cute.mp3');
 }
 
 //------------------------------------------------•°o.O Setup O.o°•
 function setup() {
     createCanvas(windowWidth,windowHeight);
-
-/////////////////////////////////////////// MUSIC
-    analyzer = new p5.Amplitude();
-    analyzer.setInput(mySound);
-    mySound.loop(); //LOOP
     
 /////////////////////////////////////////// BUTTONS Translate bg
 // Start to Bathroom
@@ -151,7 +141,7 @@ function setup() {
     inputName.size(width/3,height/10);
     inputName.value = text;
     // Placeholder
-    document.getElementById("inputName").placeholder = "your name..";
+    document.getElementById("inputName").placeholder = "nome...";
 
 ////    Need to expand your window
     Expand = createSprite(width/2,height/2,1,1);
@@ -159,39 +149,11 @@ function setup() {
     Expand.addAnimation("NotExpand", "images/expand_none.png");
     
 ////    Button RESTART - SHARE - INFO - SOUND
-    restartButton=createButton("Restart");
+    restartButton=createButton("RICOMINCIA");
     restartButton.addClass("button");
     restartButton.position(width/18.8,height/1.12);
     restartButton.mousePressed(restart);
     restartButton.hide();
-    
-    shareButton=createButton("Share");
-    shareButton.id("share");
-    shareButton.addClass("button");
-    shareButton.position(width/8,height/1.12);
-    shareButton.mousePressed(shareOptions);
-    shareButton.hide();
-
-    fbButton=createButton("");
-    fbButton.id("facebook");
-    fbButton.position(width/5.5,height/1.11);
-    fbButton.size(width/30,width/30);
-    fbButton.mousePressed(shareFb);
-    fbButton.hide();
- 
-    twButton=createButton("");
-    twButton.id("twitter");
-    twButton.position(width/4.9,height/1.11);
-    twButton.size(width/30,width/30);
-    twButton.mousePressed(shareTw);
-    twButton.hide();
-    
-    pinButton=createButton("");
-    pinButton.id("pinterest");
-    pinButton.position(width/4.4,height/1.11);
-    pinButton.size(width/30,width/30);
-    pinButton.mousePressed(sharePin);
-    pinButton.hide();
 
     infoButton=createButton("");
     infoButton.id("info");
@@ -200,16 +162,8 @@ function setup() {
     infoButton.size(width/30,width/30);
     infoButton.mousePressed(infoBox);
     infoButton.show();
-
-    soundButton=createButton("");
-    soundButton.id("sound");
-    soundButton.addClass("sound");
-    soundButton.position(width/38,height/30);
-    soundButton.size(width/30,width/30);
-    soundButton.mousePressed(playSound);
-    soundButton.show();
     
-    seeCode=createButton("see code on github");
+    seeCode=createButton("Vai al sito piantando.it");
     seeCode.id("seeCode");
     seeCode.position(width/2.1,height/1.32);
     seeCode.size(width/8.5,width/50);
@@ -253,7 +207,7 @@ function setup() {
     input.placeholder = 3;
     document.getElementById("numWMachine").style.visibility = "hidden";
     
-    buttonDone5 = createButton("Done!");
+    buttonDone5 = createButton("Fatto!");
     buttonDone5.addClass("button");
     buttonDone5.position(width/1.46,height/2.7);
     buttonDone5.size(width/15,height/18);
@@ -275,7 +229,7 @@ function setup() {
     input.placeholder = 2;
     document.getElementById("numMop").style.visibility = "hidden";
     
-    buttonDone6 = createButton("Done!");
+    buttonDone6 = createButton("Fatto!");
     buttonDone6.addClass("button");
     buttonDone6.position(width/5.15,height/2.6);
     buttonDone6.size(width/15,height/18);
@@ -296,7 +250,7 @@ function setup() {
     
 //-----> INPUT Kitchen
     // > Dish
-    buttonHand = createButton("By hand");
+    buttonHand = createButton("A mano");
     buttonHand.addClass("button");
     buttonHand.id("buttonHand");
     buttonHand.size(width/10,height/18);
@@ -304,7 +258,7 @@ function setup() {
     buttonHand.mousePressed(handOptions);
     buttonHand.hide();
     
-    buttonDishwasher = createButton("Dishwasher");
+    buttonDishwasher = createButton("In lavastoviglie");
     buttonDishwasher.addClass("button");
     buttonDishwasher.id("buttonDishwasher");
     buttonDishwasher.size(width/10,height/18);
@@ -321,9 +275,9 @@ function setup() {
     selDishwasher.addClass("selection");
     selDishwasher.position(width/1.64,height/3.1);
     selDishwasher.size(width/10,height/25);
-    selDishwasher.option('Daily');
+    selDishwasher.option('Quotidiano');
     selDishwasher.option('Eco');
-    selDishwasher.option('Intensive');
+    selDishwasher.option('Intensivo');
     selDishwasher.hide();
     
     input = createInput();
@@ -335,14 +289,14 @@ function setup() {
     input.placeholder = 7;
     document.getElementById("numDishwasher").style.visibility = "hidden";
     
-    buttonDone3 = createButton("Done!");
+    buttonDone3 = createButton("Fatto!");
     buttonDone3.addClass("button");
     buttonDone3.size(width/15,height/18);
     buttonDone3.mousePressed(Q3results);
     buttonDone3.hide();
     
     // > Garden
-    buttonYes = createButton("Yes");
+    buttonYes = createButton("Si");
     buttonYes.addClass("button");
     buttonYes.id("buttonYes");
     buttonYes.size(width/10,height/18);
@@ -379,7 +333,7 @@ function setup() {
     gardenSlider.size(width/8,0);
     gardenSlider.hide();
     
-    buttonDone4 = createButton("Done!");
+    buttonDone4 = createButton("Fatto!");
     buttonDone4.addClass("button");
     buttonDone4.size(width/15,height/18);
     buttonDone4.position(width/5.15,height/1.82);
@@ -428,7 +382,7 @@ function setup() {
     
 //-----> INPUT Bathroom
     // > Shower
-    buttonShower = createButton("Shower");
+    buttonShower = createButton("Doccia");
     buttonShower.addClass("button");
     buttonShower.id("buttonShower");
     buttonShower.size(width/10,height/18);
@@ -436,7 +390,7 @@ function setup() {
     buttonShower.mousePressed(showerOptions);
     buttonShower.hide();
     
-    buttonTub = createButton("Bath");
+    buttonTub = createButton("Bagno");
     buttonTub.addClass("button");
     buttonTub.id("buttonTub");
     buttonTub.size(width/10,height/18);
@@ -463,8 +417,8 @@ function setup() {
     selTub.addClass("selection");
     selTub.position(width/1.64,height/2.85);
     selTub.size(width/10,height/25);
-    selTub.option('Full');
-    selTub.option('Half-full');
+    selTub.option('Piena');
+    selTub.option('A metà');
     selTub.hide();
     
     input = createInput();
@@ -476,7 +430,7 @@ function setup() {
     input.placeholder = 4;
     document.getElementById("numBaths").style.visibility = "hidden";
     
-    buttonDone1 = createButton("Done!");
+    buttonDone1 = createButton("Fatto!");
     buttonDone1.addClass("button");
     buttonDone1.size(width/15,height/18);
     buttonDone1.position(width/1.46,height/1.75);
@@ -490,7 +444,7 @@ function setup() {
     teethSlider.size(width/8,0);
     teethSlider.hide();
     
-    buttonDone2 = createButton("Done!");
+    buttonDone2 = createButton("Fatto!");
     buttonDone2.addClass("button");
     buttonDone2.position(width/5.15,height/3);
     buttonDone2.size(width/15,height/18);
@@ -526,9 +480,7 @@ function draw(){
         
         buttonStart.hide();
         document.getElementById("inputName").style.visibility='hidden';
-        mySound.stop();
         infoButton.hide();
-        soundButton.hide();
         
         Jack.visible=false;
         Bath.visible=false;
@@ -551,9 +503,7 @@ function draw(){
         
         buttonStart.hide();
         document.getElementById("inputName").style.visibility='hidden';
-        mySound.stop();
         infoButton.hide();
-        soundButton.hide();
         
         Jack.visible=false;
         Bath.visible=false;
@@ -679,7 +629,7 @@ function draw(){
     textAlign(CENTER);
     textStyle(BOLD);
     textFont("Dosis");
-    text("HOW MUCH WATER DO YOU USE?",width/2,y+height/5.5);
+    text("CALCOLA QUANTA ACQUA USI!",width/2,y+height/5.5);
     pop();
 // TEXT - Hi x!
     push();
@@ -688,7 +638,7 @@ function draw(){
         textSize((width/100)*3.5);
         textAlign(LEFT);
         textFont("Lato");
-        text("Hi,",width/2.13,height/1.81);
+        text("Ciao,",width/2.13,height/1.81);
     }
     pop();
     push();
@@ -697,7 +647,7 @@ function draw(){
         textSize((width/100)*2.5);
         textAlign(LEFT);
         textFont("Lato");
-        text("I'm Jack. Are you ready\nto find it out together?",width/2.13,height/1.6);
+        text("Sono Ugo. Sei pronto a scoprirlo insieme?",width/2.13,height/1.6);
     }
     pop();
         
@@ -761,7 +711,7 @@ function draw(){
         rect(width/1.7, height/10, width/3.6, height/1.69, 20);
         pop();
         
-        text("Do you prefer to take a shower\nor a bath?", width/1.64,height/6.2);
+        text("Di solito fai la doccia o il bagno?", width/1.64,height/6.2);
         buttonShower.show();
         buttonTub.show();
     
@@ -769,7 +719,7 @@ function draw(){
             document.getElementById("buttonShower").className = "selected"; 
             document.getElementById("buttonTub").className = "button"; 
      
-            text("How long does the shower last?", width/1.64,height/3);
+            text("Quanto tempo dura?", width/1.64,height/3);
         
             showerSlider.show();
             showerMinutes = showerSlider.value();
@@ -782,7 +732,7 @@ function draw(){
             text(showerMinutes+" minutes",width/1.34,height/2.65);}
             pop();
           
-            text("How many showers do you take\neach week?", width/1.64,height/2.3);
+            text("Quante ne fai a settimana?", width/1.64,height/2.3);
             document.getElementById("numShower").style.visibility = "visible";
 
             push();
@@ -797,10 +747,10 @@ function draw(){
             document.getElementById("buttonShower").className = "button";
             document.getElementById("buttonTub").className = "selected";
             
-            text("How much do you fill your bathtub?", width/1.64,height/3);
+            text("Quanto riempi la vasca?", width/1.64,height/3);
             selTub.show();
         
-            text("How many baths do you take\neach week?", width/1.64,height/2.3);
+            text("Quanti bagni fai a settimana?", width/1.64,height/2.3);
             document.getElementById("numBaths").style.visibility = "visible";
             
             push();
@@ -874,7 +824,7 @@ function draw(){
         rect(width/10, height/10, width/3.6, height/2.8, 20);
         pop();
         
-        text("How long do you leave the tap running\nwhile you are brushing your teeth?", width/8.3,height/6.2);
+        text("Quanto tempo lasci il rubinetto aperto\nquando lavi i denti?", width/8.3,height/6.2);
         teethSlider.show();
         buttonDone2.show();
         
@@ -951,7 +901,7 @@ function draw(){
         rect(width/1.7, height/10, width/3.6, height/1.8, 20);
         pop();
             
-        text("How do you wash your dishes?", width/1.64,height/6.2);
+        text("Come lavi i piatti?", width/1.64,height/6.2);
         buttonHand.show();
         buttonDishwasher.show();
     
@@ -959,7 +909,7 @@ function draw(){
             document.getElementById("buttonHand").className = "selected"; 
             document.getElementById("buttonDishwasher").className = "button";
  
-            text("How long do you leave the tap running\nwhile you are doing your dishes?", width/1.64,height/3.3);
+            text("Quanto tempo lasci il rubinetto aperto\nmentre lavi i piatti?", width/1.64,height/3.3);
         
             handSlider.show();
             handMinutes = handSlider.value();
@@ -981,10 +931,10 @@ function draw(){
             document.getElementById("buttonHand").className = "button"; 
             document.getElementById("buttonDishwasher").className = "selected"; 
     
-            text("Set the dishwasher program…", width/1.64,height/3.3);
+            text("Imposta la lavastoviglie…", width/1.64,height/3.3);
             selDishwasher.show();
         
-            text("How many times a week\ndo you run it?", width/1.64,height/2.4);
+            text("Quante volte la fai a settimana?", width/1.64,height/2.4);
             document.getElementById("numDishwasher").style.visibility = "visible";
             
             push();
@@ -1067,7 +1017,7 @@ function draw(){
         rect(width/10, height/10, width/3.6, height/1.8, 20);
         pop();
 
-        text("Do you have a garden?", width/8.3,height/6.2);
+        text("Hai un giardino?", width/8.3,height/6.2);
             buttonYes.show();
             buttonNo.show();
         
@@ -1076,7 +1026,7 @@ function draw(){
         if(pressYes===true){
             document.getElementById("buttonYes").className = "selected";
             
-            text("How big is it?", width/8.3,height/3.3);
+            text("Quanto è grande?", width/8.3,height/3.3);
         
             document.getElementById("mqGarden").style.visibility = "visible";
             push();
@@ -1084,10 +1034,10 @@ function draw(){
             text("square meters", width/3.75,height/3.3);
             pop();
         
-            text("How do you water it?",width/8.3,height/2.8);
+            text("Come innaffi?",width/8.3,height/2.8);
             selGarden.show();
         
-            text("How long do you water each time?", width/8.3,height/2.2);
+            text("Per quanto tempo in media?", width/8.3,height/2.2);
             gardenSlider.show();
             gardenMinutes = gardenSlider.value();
             
@@ -1202,7 +1152,7 @@ function draw(){
         rect(width/1.7, height/10, width/3.6, height/2.6, 20);
         pop();
     
-        text("Set the washine machine program...",width/1.64,height/6.2);
+        text("Imposta la lavastrice...",width/1.64,height/6.2);
         selWMachine.show();
         WMachineSlider.show();
     
@@ -1212,7 +1162,7 @@ function draw(){
         text("60°",width/1.27,height/5);
         pop();
     
-        text("How many times a week do you\nrun it?",width/1.64,height/3.9);
+        text("Quante ne fai a settimana?",width/1.64,height/3.9);
         document.getElementById("numWMachine").style.visibility = "visible";
         
         push();
@@ -1284,10 +1234,10 @@ function draw(){
         rect(width/10, height/10, width/3.6, height/2.6, 20);
         pop();
     
-        text("How many times a week do you\nclean your house?",width/8.3,height/6.2);
+        text("Quante volte a settimana lavi il pavimento?",width/8.3,height/6.2);
         document.getElementById("numMop").style.visibility = "visible";
     
-        text("How many mop bucket do you fill?", width/8.3,height/3.4);
+        text("Quanti secchi d'acqua usi in media?", width/8.3,height/3.4);
         mopSlider.show();
         
         push();
@@ -1388,12 +1338,12 @@ function draw(){
         textAlign(LEFT);
         textSize(width/28);
         textStyle(BOLD);   
-        text("YOU USED "+Result+" LITERS IN A WEEK!", width/3,height/5.7);
+        text("USI "+Result+" LITRI A SETTIMANA!", width/3,height/5.7);
         
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2);
-        text("According to the World Health Organization you would need only 700 liters.\nWith the water you wasted, you could fill "+Waste+" bathtubs.", width/3,height/4.5);
+        text("Secondo l'Organizzazione Mondiale della Sanità dovresti usarne solo 700 litri. \nCon l'acqua sprecata avresti potuto riempire "+Waste+" vasche.", width/3,height/4.5);
           
         } else { 
         fill(255);
@@ -1408,12 +1358,12 @@ function draw(){
         textAlign(LEFT);
         textSize(width/28);
         textStyle(BOLD);     
-        text("YOU USED "+Result+" LITERS IN A WEEK!", width/3,height/5.7); 
+        text("USI "+Result+" LITRI A SETTIMANA!", width/3,height/5.7); 
             
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2);     
-        text("According to the World Health Organization you would need only 700 liters. \nWith the water you wasted, you could fill  "+Waste+" bathtubs.", width/3,height/4.5);
+        text("Secondo l'Organizzazione Mondiale della Sanità dovresti usarne solo 700 litri. \nCon l'acqua sprecata avresti potuto riempire "+Waste+" vasche.", width/3,height/4.5);
         }    
   } else if (percent>=95 && Jack.position.y==5*height/8 && Waste<1){
       
@@ -1427,12 +1377,12 @@ function draw(){
         textAlign(CENTER);
         textSize(width/28);
         textStyle(BOLD);   
-        text("YOU USED "+Result+" LITERS IN A WEEK!", width/2,height/5.7);
+        text("USI "+Result+" LITRI A SETTIMANA!", width/2,height/5.7);
         
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2); 
-        text("Compliments! You have respected the amount of water setted by the World Health Organization, \nwhich says that 100 liters per person per day are needed to ensure the most basic human needs.", width/2,height/4.5);  
+        text("Complimenti! Hai rispettato la quantità di acqua necessaria secondo l'Organizzazione Mondiale della Sanità, \nla quale prevede che per assicurare i bisogni umani bastano 100 litri d'acqua al giorno a persona.", width/2,height/4.5);  
           
         } else {    
             
@@ -1441,12 +1391,12 @@ function draw(){
         textAlign(CENTER);
         textSize(height/15);
         textStyle(BOLD);   
-        text(userNamemaiuscola+", YOU USED "+Result+" LITERS IN A WEEK!", width/2,height/5.7);
+        text(userNamemaiuscola+", USI "+Result+" LITRI A SETTIMANA!", width/2,height/5.7);
         
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2); 
-        text("Compliments! You have respected the amount of water setted by the World Health Organization, \nwhich says that 100 liters per person per day are needed to ensure the most basic human needs.", width/2,height/4.5);  
+        text("Complimenti! Hai rispettato la quantità di acqua necessaria secondo l'Organizzazione Mondiale della Sanità, \nla quale prevede che per assicurare i bisogni umani bastano 100 litri d'acqua al giorno a persona.", width/2,height/4.5);  
         }
         } else if(Jack.position.y==height/2.2 && Waste<1){
         myImage.visible=false;
@@ -1597,7 +1547,7 @@ function draw(){
         textFont("Lato");
         textAlign(LEFT);
         textStyle(BOLD);
-        text("WHAT?",width/2.1,height/3.8);
+        text("COSA?",width/2.1,height/3.8);
         pop();
         
         push();
@@ -1605,7 +1555,7 @@ function draw(){
         fill("#58595b");
         textFont("Lato");
         textAlign(LEFT);
-        text("This is a university project built in p5.js during the\ncourse Creative Coding at the Politecnico di Milano.\n\nJack will drive you in 3 different rooms where you\nhave to answer questions about your habits.\nAt the end you'll find out how much water you waste,\nin average, in a week.", width/2.1,height/3.3);
+        text("Questo strumento serve a calcolare quanta acqua viene utilizzata in media a settimana.", width/2.1,height/3.3);
         pop();
         
         push();
@@ -1614,7 +1564,7 @@ function draw(){
         textFont("Lato");
         textAlign(LEFT);
         textStyle(BOLD);
-        text("WHO?",width/2.1,height/1.78);
+        text("CHI?",width/2.1,height/1.78);
         pop();
         
         push();
@@ -1622,7 +1572,7 @@ function draw(){
         fill("#58595b");
         textFont("Lato");
         textAlign(LEFT);
-        text("The project is developed by:\n•  Mara Cominardi\n•  Chiara Riente\n•  Sara Pizzatti", width/2.1,height/1.65);
+        text("Il progetto è sviluppato da:\n•  Chiara Riente\n•  Andrea Evangelista\n•  Matteo Virelli", width/2.1,height/1.65);
         pop();
         
         seeCode.show();
@@ -1851,39 +1801,11 @@ function Q6results() {
 
 // button RESTART - SHARE - SOUND - INFO
 function github() {
-     window.open("https://github.com/JackDoesntWaste/water","_blank");
+     window.open("https://piantando.it","_blank");
 }
 
 function restart() {
     location.reload();
-}
-
-function shareOptions() {
-    if(pressShare===false){
-        pressShare=true;
-        document.getElementById("share").className = "selected";
-        fbButton.show();
-        twButton.show();
-        pinButton.show();
-    } else {
-        pressShare=false;
-        document.getElementById("share").className = "button";
-        fbButton.hide();
-        twButton.hide();
-        pinButton.hide();
-    }
-}
-
-function shareFb() {
-    window.open("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbit.ly%2FJackDoesntWaste&picture=https%3A%2F%2Fgithub.com%2FJackDoesntWaste%2Fwater%2Fblob%2Fmaster%2Fimages%2Fcard.png%3Fraw%3Dtrue&title=How+much+water+do+you+use%3F&caption=%23JackDoesntWaste&quote=&description=Let%27s+find+it+out+with+Jack+%3A%29",'_blank');
-}
-
-function shareTw() {
-    window.open("https://twitter.com/share?url=https://bit.ly/JackDoesntWaste&amp;text=How%20much%20water%20do%20you%20use?%20Let's%20find%20it%20out%20on&amp;hashtags=waterWaste",'_blank');
-}
-
-function sharePin() {
-    window.open("http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fjackdoesntwaste.github.io%2Fwater%2F&media=https://github.com/JackDoesntWaste/water/blob/master/images/card.png?raw=true&description=Let's%20find%20it%20out%20with%20Jack%20%3A)",'_blank');
 }
 
 function infoBox() {
@@ -1896,16 +1818,6 @@ function infoBox() {
         pressInfo=false;
         document.getElementById("info").className = "info";
         infoButton.position(width/18.8,height/30);
-    }
-}
-
-function playSound() {
-    if (mySound.isPlaying()===true) {
-        document.getElementById("sound").className = "noSound";
-        mySound.pause();
-    } else {
-        document.getElementById("sound").className = "sound";
-        mySound.loop();
     }
 }
 
