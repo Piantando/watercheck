@@ -1,0 +1,751 @@
+@media screen and (max-width: 1024px) {
+/* GENERAL */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('images/drop.gif') 50% 50% no-repeat #a6cdda;
+}
+
+body {
+    margin: 0px;
+    position: fixed;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+/* START */
+#inputName{
+    font-size: 2em;
+    text-align: left;
+    color: white;
+    background: none;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    margin-top: 2px;
+}
+
+#inputName:focus {
+    outline: none;
+} 
+
+#inputName::-webkit-input-placeholder {
+    color: #677f8c;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+#startButton {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    color: #677f8c;
+    text-align: center;
+    font-size: 1em;
+    border-bottom: 2px solid;
+}
+
+/* INPUT TEXT */
+input[type=text]{
+    font-size: 1em;
+    text-align: center;
+    color: #677f8c;
+    background: none;
+    border: none;
+    border-bottom: 2px solid;
+    font-family: 'Lato', sans-serif;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+input[type=text]::-webkit-input-placeholder {
+    color: #677f8c;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+/* INPUT RANGE */
+input[type=range] {
+    -webkit-appearance: none;
+    background: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    cursor: pointer;
+    background: #677F8C;
+    border-radius: 5px;
+    margin-top: -8px;
+}
+input[type=range]::-webkit-slider-thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 25px;
+    border: none;
+    background: #a6cdda;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4px;
+}
+
+/* DROPDOWN */
+.selection {
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: #677F8C 2px solid;
+    border-radius: 0px;
+    color: #677F8C;
+    background: none; 
+}
+
+/* ADDITIONAL BUTTONS - INFO/SOUND */
+#seeCode {
+    font-size: 0.8em;
+    text-align: center;
+    color: #677F8C;
+    background: none;
+    border: none;
+    border-bottom: 2px solid;
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
+    
+.info {
+    background-image: url(images/info_20.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+.infoSelected {
+    background-image: url(images/closePopUp_20.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+.sound {
+    background-image: url(images/audio_play_20.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+    
+.noSound {
+    background-image: url(images/audio_stop_20.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+/* CHANGE ROOM BUTTON */
+#toKitchen {
+    background-image: url(images/Next_room_kitchen.gif);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#toLaundry {
+    background-image: url(images/Next_room_laundry.gif);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+/* BUTTONS IN THE BOXES */
+.button {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: none;
+    border: 2px solid;
+    color: #677f8c;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.selected {	
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: #677f8c;
+    border: #677f8c 2px solid;
+    color: white;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+/* RESTART AND SHARE BUTTONS */
+#facebook {
+    background-image: url(images/facebook_20.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+	
+#twitter {
+    background-image: url(images/twitter_20.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#pinterest {
+    background-image: url(images/pinterest_20.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+}
+
+@media screen and (min-width: 1024px) {
+/* GENERAL */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('images/drop.gif') 50% 50% no-repeat #a6cdda;
+}
+
+body {
+    margin: 0px;
+    position: fixed;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+/* START */
+#inputName{
+    font-size: 3em;
+    text-align: left;
+    color: white;
+    background: none;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    cursor: text;
+}
+
+#inputName:focus {
+    outline: none;
+}
+
+#inputName::-webkit-input-placeholder {
+    color: #677f8c;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+#startButton {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    color: #677f8c;
+    text-align: center;
+    font-size: 1.6em;
+    border-bottom: 2.5px solid;
+}
+
+#startButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* INPUT TEXT */
+input[type=text]{
+    font-size: 1.5em;
+    text-align: center;
+    color: #677f8c;
+    background: none;
+    border: none;
+    border-bottom: 2px solid;
+    font-family: 'Lato', sans-serif;
+    cursor: text;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+input[type=text]::-webkit-input-placeholder {
+    color: #677f8c;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+/* INPUT RANGE */
+input[type=range] {
+    -webkit-appearance: none;
+    background: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    cursor: pointer;
+    background: #677F8C;
+    border-radius: 5px;
+}
+input[type=range]::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 25px;
+    background: #a6cdda;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+}
+
+/* DROPDOWN */
+.selection {
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: #677F8C 2px solid;
+    border-radius: 0px;
+    color: #677F8C;
+    background: none; 
+    cursor: pointer;
+}
+
+/* ADDITIONAL BUTTONS - INFO/SOUND */
+#seeCode {
+    font-size: 1.2em;
+    text-align: center;
+    color: #677F8C;
+    background: none;
+    border: none;
+    border-bottom: 2px solid;
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
+#seeCode:hover {
+    cursor: pointer;
+    color: #a6cdda; 
+}
+       
+.info {
+    background-image: url(images/info_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.info:hover {
+    background-image: url(images/info_25-hover.png);
+    cursor: pointer;
+}
+
+.infoSelected {
+    background-image: url(images/closePopUp_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.infoSelected:hover {
+    background-image: url(images/closePopUp_25-hover.png);
+    cursor: pointer;
+}
+
+.sound {
+    background-image: url(images/audio_play_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.sound:hover {
+    background-image: url(images/audio_play_25-hover.png);
+    cursor: pointer;
+}
+.noSound {
+    background-image: url(images/audio_stop_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.noSound:hover {
+    background-image: url(images/audio_stop_25-hover.png);
+    cursor: pointer;
+}
+
+/* CHANGE ROOM BUTTON */
+#toKitchen {
+    background-image: url(images/Next_room_kitchen.gif);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#toKitchen:hover {
+    background-image: url(images/Next_room_hover.gif);
+    cursor: pointer;
+}
+
+#toLaundry {
+    background-image: url(images/Next_room_laundry.gif);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#toLaundry:hover {
+    background-image: url(images/Next_room_hover.gif);
+    cursor: pointer;
+}
+
+/* BUTTONS IN THE BOXES */
+.button {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: none;
+    border: 2.5px solid;
+    color: #677f8c;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #677f8c;
+    border: #677f8c 2.5px solid;
+    color: white;
+    cursor: pointer;
+}
+
+.selected {	
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: #677f8c;
+    border: #677f8c 2.5px solid;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* RESTART AND SHARE BUTTONS */
+#facebook {
+    background-image: url(images/facebook_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+#facebook:hover {
+    background-image: url(images/facebook_25-hover.png);
+    cursor: pointer;
+}
+
+#twitter {
+    background-image: url(images/twitter_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+#twitter:hover {
+    background-image: url(images/twitter_25-hover.png);
+    cursor: pointer;
+}
+
+#pinterest {
+    background-image: url(images/pinterest_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#pinterest:hover {
+    background-image: url(images/pinterest_25-hover.png);
+    cursor: pointer;
+}
+}
+
+@media screen and (min-width: 1600px) {
+/* GENERAL */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('images/drop.gif') 50% 50% no-repeat #a6cdda;
+}
+
+body {
+    margin: 0px;
+    position: fixed;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+/* START */
+#inputName{
+    font-size: 5em;
+    text-align: left;
+    color: white;
+    background: none;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    cursor: text;
+}
+
+#inputName:focus {
+    outline: none;
+}
+
+#inputName::-webkit-input-placeholder {
+    color: #677f8c;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+#startButton {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    color: #677f8c;
+    text-align: center;
+    font-size: 3em;
+    border-bottom: 3px solid;
+}
+
+#startButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* INPUT TEXT */
+input[type=text]{
+    font-size: 2em;
+    text-align: center;
+    color: #677f8c;
+    background: none;
+    border: none;
+    border-bottom: 3px solid;
+    font-family: 'Lato', sans-serif;
+    cursor: text;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+input[type=text]::-webkit-input-placeholder {
+    color: #677f8c;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+/* INPUT RANGE */
+input[type=range] {
+    -webkit-appearance: none;
+    background: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 8px;
+    cursor: pointer;
+    background: #677F8C;
+    border-radius: 5px;
+}
+input[type=range]::-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #a6cdda;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+}
+
+/* DROPDOWN */
+.selection {
+    font-size: 1.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: #677F8C 3px solid;
+    border-radius: 0px;
+    color: #677F8C;
+    background: none; 
+    cursor: pointer;
+}
+
+/* ADDITIONAL BUTTONS - INFO/SOUND */
+#seeCode {
+    font-size: 2.1em;
+    text-align: center;
+    color: #677F8C;
+    background: none;
+    border: none;
+    border-bottom: 3px solid;
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
+#seeCode:hover {
+    cursor: pointer;
+    color: #a6cdda; 
+}
+       
+.info {
+    background-image: url(images/info_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.info:hover {
+    background-image: url(images/info_25-hover.png);
+    cursor: pointer;
+}
+
+.infoSelected {
+    background-image: url(images/closePopUp_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.infoSelected:hover {
+    background-image: url(images/closePopUp_25-hover.png);
+    cursor: pointer;
+}
+
+.sound {
+    background-image: url(images/audio_play_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.sound:hover {
+    background-image: url(images/audio_play_25-hover.png);
+    cursor: pointer;
+}
+.noSound {
+    background-image: url(images/audio_stop_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+.noSound:hover {
+    background-image: url(images/audio_stop_25-hover.png);
+    cursor: pointer;
+}
+
+/* CHANGE ROOM BUTTON */
+#toKitchen {
+    background-image: url(images/Next_room_kitchen.gif);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#toKitchen:hover {
+    background-image: url(images/Next_room_hover.gif);
+    cursor: pointer;
+}
+
+#toLaundry {
+    background-image: url(images/Next_room_laundry.gif);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#toLaundry:hover {
+    background-image: url(images/Next_room_hover.gif);
+    cursor: pointer;
+}
+
+/* BUTTONS IN THE BOXES */
+.button {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: none;
+    border: 3px solid;
+    color: #677f8c;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #677f8c;
+    border: #677f8c 3px solid;
+    color: white;
+    cursor: pointer;
+}
+
+.selected {	
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: #677f8c;
+    border: #677f8c 3px solid;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* RESTART AND SHARE BUTTONS */
+#facebook {
+    background-image: url(images/facebook_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+#facebook:hover {
+    background-image: url(images/facebook_25-hover.png);
+    cursor: pointer;
+}
+
+#twitter {
+    background-image: url(images/twitter_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+#twitter:hover {
+    background-image: url(images/twitter_25-hover.png);
+    cursor: pointer;
+}
+
+#pinterest {
+    background-image: url(images/pinterest_25.png);
+    background-repeat: no-repeat;
+    background-color: transparent; 
+    border: none;
+}
+
+#pinterest:hover {
+    background-image: url(images/pinterest_25-hover.png);
+    cursor: pointer;
+}
+}
