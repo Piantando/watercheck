@@ -35,11 +35,8 @@ var speedUP=false;
 
 var infoButton, seeCode;
 var pressInfo=false;
-var soundButton;
 var restartButton;
-var shareButton;
-var pressShare=false;
-var fbButton, twButton, pinButton;
+var github;
 
 // DROP
 var dropx;
@@ -109,7 +106,6 @@ function preload() {
     iron = loadImage('images/iron.png');
     LaundryBack = loadImage('images/laundry.png');
     myTub=loadImage("images/wastetub.png");
-    mySound = loadSound('sound/cute.mp3');
 }
 
 //------------------------------------------------•°o.O Setup O.o°•
@@ -119,7 +115,6 @@ function setup() {
 /////////////////////////////////////////// MUSIC
     analyzer = new p5.Amplitude();
     analyzer.setInput(mySound);
-    mySound.loop(); //LOOP
     
 /////////////////////////////////////////// BUTTONS Translate bg
 // Start to Bathroom
@@ -164,34 +159,6 @@ function setup() {
     restartButton.position(width/18.8,height/1.12);
     restartButton.mousePressed(restart);
     restartButton.hide();
-    
-    shareButton=createButton("Share");
-    shareButton.id("share");
-    shareButton.addClass("button");
-    shareButton.position(width/8,height/1.12);
-    shareButton.mousePressed(shareOptions);
-    shareButton.hide();
-
-    fbButton=createButton("");
-    fbButton.id("facebook");
-    fbButton.position(width/5.5,height/1.11);
-    fbButton.size(width/30,width/30);
-    fbButton.mousePressed(shareFb);
-    fbButton.hide();
- 
-    twButton=createButton("");
-    twButton.id("twitter");
-    twButton.position(width/4.9,height/1.11);
-    twButton.size(width/30,width/30);
-    twButton.mousePressed(shareTw);
-    twButton.hide();
-    
-    pinButton=createButton("");
-    pinButton.id("pinterest");
-    pinButton.position(width/4.4,height/1.11);
-    pinButton.size(width/30,width/30);
-    pinButton.mousePressed(sharePin);
-    pinButton.hide();
 
     infoButton=createButton("");
     infoButton.id("info");
@@ -200,21 +167,6 @@ function setup() {
     infoButton.size(width/30,width/30);
     infoButton.mousePressed(infoBox);
     infoButton.show();
-
-    soundButton=createButton("");
-    soundButton.id("sound");
-    soundButton.addClass("sound");
-    soundButton.position(width/38,height/30);
-    soundButton.size(width/30,width/30);
-    soundButton.mousePressed(playSound);
-    soundButton.show();
-    
-    seeCode=createButton("see code on github");
-    seeCode.id("seeCode");
-    seeCode.position(width/2.1,height/1.32);
-    seeCode.size(width/8.5,width/50);
-    seeCode.mousePressed(github);
-    seeCode.hide();
     
 /////////////////////////////////////////// LAUNDRY
     // Washing machine
@@ -1858,34 +1810,6 @@ function restart() {
     location.reload();
 }
 
-function shareOptions() {
-    if(pressShare===false){
-        pressShare=true;
-        document.getElementById("share").className = "selected";
-        fbButton.show();
-        twButton.show();
-        pinButton.show();
-    } else {
-        pressShare=false;
-        document.getElementById("share").className = "button";
-        fbButton.hide();
-        twButton.hide();
-        pinButton.hide();
-    }
-}
-
-function shareFb() {
-    window.open("");
-}
-
-function shareTw() {
-    window.open();
-}
-
-function sharePin() {
-    window.open()",'_blank');
-}
-
 function infoBox() {
     if(pressInfo===false){
         pressInfo=true;
@@ -1896,16 +1820,6 @@ function infoBox() {
         pressInfo=false;
         document.getElementById("info").className = "info";
         infoButton.position(width/18.8,height/30);
-    }
-}
-
-function playSound() {
-    if (mySound.isPlaying()===true) {
-        document.getElementById("sound").className = "noSound";
-        mySound.pause();
-    } else {
-        document.getElementById("sound").className = "sound";
-        mySound.loop();
     }
 }
 
