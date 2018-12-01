@@ -123,7 +123,7 @@ function setup() {
     
 /////////////////////////////////////////// BUTTONS Translate bg
 // Start to Bathroom
-    buttonStart = createButton("Let's start!");
+    buttonStart = createButton("Inizia!");
     buttonStart.id("startButton");
     buttonStart.size(width/8,height/18);
     buttonStart.position(width/1.87,height/1.35);
@@ -679,9 +679,9 @@ function draw(){
     textAlign(CENTER);
     textStyle(BOLD);
     textFont("Dosis");
-    text("HOW MUCH WATER DO YOU USE?",width/2,y+height/5.5);
+    text("CALCOLA QUANTA ACQUA USI!",width/2,y+height/5.5);
     pop();
-// TEXT - Hi x!
+// TEXT - Ciao x!
     push();
     if (stateStart==false){
         fill(255);
@@ -697,7 +697,7 @@ function draw(){
         textSize((width/100)*2.5);
         textAlign(LEFT);
         textFont("Lato");
-        text("I'm Jack. Are you ready\nto find it out together?",width/2.13,height/1.6);
+        text("Sono Ugo. Sei pronto per scoprirlo insieme?",width/2.13,height/1.6);
     }
     pop();
         
@@ -761,7 +761,7 @@ function draw(){
         rect(width/1.7, height/10, width/3.6, height/1.69, 20);
         pop();
         
-        text("Do you prefer to take a shower\nor a bath?", width/1.64,height/6.2);
+        text("Di solito fai la doccia o il bagno?", width/1.64,height/6.2);
         buttonShower.show();
         buttonTub.show();
     
@@ -769,7 +769,7 @@ function draw(){
             document.getElementById("buttonShower").className = "selected"; 
             document.getElementById("buttonTub").className = "button"; 
      
-            text("How long does the shower last?", width/1.64,height/3);
+            text("Quanto dura la doccia?", width/1.64,height/3);
         
             showerSlider.show();
             showerMinutes = showerSlider.value();
@@ -782,7 +782,7 @@ function draw(){
             text(showerMinutes+" minutes",width/1.34,height/2.65);}
             pop();
           
-            text("How many showers do you take\neach week?", width/1.64,height/2.3);
+            text("Quante docce fai a settimana?", width/1.64,height/2.3);
             document.getElementById("numShower").style.visibility = "visible";
 
             push();
@@ -797,10 +797,10 @@ function draw(){
             document.getElementById("buttonShower").className = "button";
             document.getElementById("buttonTub").className = "selected";
             
-            text("How much do you fill your bathtub?", width/1.64,height/3);
+            text("Quanto riempi la vasca da bagno?", width/1.64,height/3);
             selTub.show();
         
-            text("How many baths do you take\neach week?", width/1.64,height/2.3);
+            text("Quanti bagni fai a settimana?", width/1.64,height/2.3);
             document.getElementById("numBaths").style.visibility = "visible";
             
             push();
@@ -874,7 +874,7 @@ function draw(){
         rect(width/10, height/10, width/3.6, height/2.8, 20);
         pop();
         
-        text("How long do you leave the tap running\nwhile you are brushing your teeth?", width/8.3,height/6.2);
+        text("Quanto tempo lasci aperto il rubinetto\nmentre di lavi i denti?", width/8.3,height/6.2);
         teethSlider.show();
         buttonDone2.show();
         
@@ -951,7 +951,7 @@ function draw(){
         rect(width/1.7, height/10, width/3.6, height/1.8, 20);
         pop();
             
-        text("How do you wash your dishes?", width/1.64,height/6.2);
+        text("Come lavi i piatti?", width/1.64,height/6.2);
         buttonHand.show();
         buttonDishwasher.show();
     
@@ -959,7 +959,7 @@ function draw(){
             document.getElementById("buttonHand").className = "selected"; 
             document.getElementById("buttonDishwasher").className = "button";
  
-            text("How long do you leave the tap running\nwhile you are doing your dishes?", width/1.64,height/3.3);
+            text("Quanto a lungo lasci il rubinetto aperto mentre lavi i piatti?", width/1.64,height/3.3);
         
             handSlider.show();
             handMinutes = handSlider.value();
@@ -981,10 +981,10 @@ function draw(){
             document.getElementById("buttonHand").className = "button"; 
             document.getElementById("buttonDishwasher").className = "selected"; 
     
-            text("Set the dishwasher program…", width/1.64,height/3.3);
+            text("Imposta la lavastoviglie...", width/1.64,height/3.3);
             selDishwasher.show();
         
-            text("How many times a week\ndo you run it?", width/1.64,height/2.4);
+            text("Quante volte a settimana la usi?", width/1.64,height/2.4);
             document.getElementById("numDishwasher").style.visibility = "visible";
             
             push();
@@ -1067,7 +1067,7 @@ function draw(){
         rect(width/10, height/10, width/3.6, height/1.8, 20);
         pop();
 
-        text("Do you have a garden?", width/8.3,height/6.2);
+        text("Hai un giardino?", width/8.3,height/6.2);
             buttonYes.show();
             buttonNo.show();
         
@@ -1081,13 +1081,13 @@ function draw(){
             document.getElementById("mqGarden").style.visibility = "visible";
             push();
             textSize(height/100*2.2);
-            text("square meters", width/3.75,height/3.3);
+            text("Metri quadrati", width/3.75,height/3.3);
             pop();
         
-            text("How do you water it?",width/8.3,height/2.8);
+            text("Come lo innaffi?",width/8.3,height/2.8);
             selGarden.show();
         
-            text("How long do you water each time?", width/8.3,height/2.2);
+            text("Quanto tempo lo innaffi ogni volta?", width/8.3,height/2.2);
             gardenSlider.show();
             gardenMinutes = gardenSlider.value();
             
@@ -1202,7 +1202,7 @@ function draw(){
         rect(width/1.7, height/10, width/3.6, height/2.6, 20);
         pop();
     
-        text("Set the washine machine program...",width/1.64,height/6.2);
+        text("Imposta il programma della lavatrice...",width/1.64,height/6.2);
         selWMachine.show();
         WMachineSlider.show();
     
@@ -1212,7 +1212,7 @@ function draw(){
         text("60°",width/1.27,height/5);
         pop();
     
-        text("How many times a week do you\nrun it?",width/1.64,height/3.9);
+        text("Quante volte a settimana\nla utilizzi?",width/1.64,height/3.9);
         document.getElementById("numWMachine").style.visibility = "visible";
         
         push();
@@ -1284,10 +1284,10 @@ function draw(){
         rect(width/10, height/10, width/3.6, height/2.6, 20);
         pop();
     
-        text("How many times a week do you\nclean your house?",width/8.3,height/6.2);
+        text("Quante volte a settimana\nlavi il pavimento?",width/8.3,height/6.2);
         document.getElementById("numMop").style.visibility = "visible";
     
-        text("How many mop bucket do you fill?", width/8.3,height/3.4);
+        text("Quanti secchi d'acqua usi?", width/8.3,height/3.4);
         mopSlider.show();
         
         push();
@@ -1393,7 +1393,7 @@ function draw(){
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2);
-        text("According to the World Health Organization you would need only 700 liters.\nWith the water you wasted, you could fill "+Waste+" bathtubs.", width/3,height/4.5);
+        text("Secondo la World Health Organization avresti bisogno di soli 700 litri di acqua.\nCon l'acqua che utilizzi potresti riempire "+Waste+" vasche da bagno.", width/3,height/4.5);
           
         } else { 
         fill(255);
@@ -1408,12 +1408,12 @@ function draw(){
         textAlign(LEFT);
         textSize(width/28);
         textStyle(BOLD);     
-        text("YOU USED "+Result+" LITERS IN A WEEK!", width/3,height/5.7); 
+        text("CONSUMI "+Result+" LITRI IN UNA SETTIMANA!", width/3,height/5.7); 
             
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2);     
-        text("According to the World Health Organization you would need only 700 liters. \nWith the water you wasted, you could fill  "+Waste+" bathtubs.", width/3,height/4.5);
+        text("Secondo la World Health Organization avresti bisogno di soli 700 litri di acqua.\nCon l'acqua che utilizzi potresti riempire "+Waste+" vasche da bagno.", width/3,height/4.5);
         }    
   } else if (percent>=95 && Jack.position.y==5*height/8 && Waste<1){
       
@@ -1427,12 +1427,12 @@ function draw(){
         textAlign(CENTER);
         textSize(width/28);
         textStyle(BOLD);   
-        text("YOU USED "+Result+" LITERS IN A WEEK!", width/2,height/5.7);
+        text("CONSUMI "+Result+" LITRI IN UNA SETTIMANA!", width/2,height/5.7);
         
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2); 
-        text("Compliments! You have respected the amount of water setted by the World Health Organization, \nwhich says that 100 liters per person per day are needed to ensure the most basic human needs.", width/2,height/4.5);  
+        text("Complimenti! Hai rispettato la quantità di acqua suggerita dalla World Health Organization, \nche dice che servono 100 litri al giorno per i bisogni basilari di ogni essere umano.", width/2,height/4.5);  
           
         } else {    
             
@@ -1441,12 +1441,12 @@ function draw(){
         textAlign(CENTER);
         textSize(height/15);
         textStyle(BOLD);   
-        text(userNamemaiuscola+", YOU USED "+Result+" LITERS IN A WEEK!", width/2,height/5.7);
+        text(userNamemaiuscola+", CONSUMI "+Result+" LITRI IN UNA SETTIMANA!", width/2,height/5.7);
         
         textStyle(NORMAL);
         textFont("Lato");
         textSize(height/100*3.2); 
-        text("Compliments! You have respected the amount of water setted by the World Health Organization, \nwhich says that 100 liters per person per day are needed to ensure the most basic human needs.", width/2,height/4.5);  
+        text("Complimenti! Hai rispettato la quantità di acqua suggerita dalla World Health Organization, \nche dice che servono 100 litri al giorno per i bisogni basilari di ogni essere umano.", width/2,height/4.5);  
         }
         } else if(Jack.position.y==height/2.2 && Waste<1){
         myImage.visible=false;
@@ -1605,7 +1605,7 @@ function draw(){
         fill("#58595b");
         textFont("Lato");
         textAlign(LEFT);
-        text("This is a university project built in p5.js during the\ncourse Creative Coding at the Politecnico di Milano.\n\nJack will drive you in 3 different rooms where you\nhave to answer questions about your habits.\nAt the end you'll find out how much water you waste,\nin average, in a week.", width/2.1,height/3.3);
+        text("Acquistando una piantina con Piantando \npromuoverai associazioni che contribuiscono a diminuire.\n\nl’impatto dell’essere umano sul nostro pianeta. \nLa prima iniziativa è Fundación Reforestemos,\nassociazione che pianta alberi contribuendo alla riforestazione\ndella Patagonia.", width/2.1,height/3.3);
         pop();
         
         push();
@@ -1614,7 +1614,7 @@ function draw(){
         textFont("Lato");
         textAlign(LEFT);
         textStyle(BOLD);
-        text("WHO?",width/2.1,height/1.78);
+        text("CHI?",width/2.1,height/1.78);
         pop();
         
         push();
@@ -1622,7 +1622,7 @@ function draw(){
         fill("#58595b");
         textFont("Lato");
         textAlign(LEFT);
-        text("The project is developed by:\n•  Mara Cominardi\n•  Chiara Riente\n•  Sara Pizzatti", width/2.1,height/1.65);
+        text("Progetto sviluppato da:\n•  Chiara Riente\n•  Matteo Virelli\n•  Andrea Evangelista", width/2.1,height/1.65);
         pop();
         
         seeCode.show();
@@ -1851,7 +1851,7 @@ function Q6results() {
 
 // button RESTART - SHARE - SOUND - INFO
 function github() {
-     window.open("https://github.com/JackDoesntWaste/water","_blank");
+     window.open("http://water.piantando.it/","_blank");
 }
 
 function restart() {
@@ -1875,15 +1875,15 @@ function shareOptions() {
 }
 
 function shareFb() {
-    window.open("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbit.ly%2FJackDoesntWaste&picture=https%3A%2F%2Fgithub.com%2FJackDoesntWaste%2Fwater%2Fblob%2Fmaster%2Fimages%2Fcard.png%3Fraw%3Dtrue&title=How+much+water+do+you+use%3F&caption=%23JackDoesntWaste&quote=&description=Let%27s+find+it+out+with+Jack+%3A%29",'_blank');
+    window.open("");
 }
 
 function shareTw() {
-    window.open("https://twitter.com/share?url=https://bit.ly/JackDoesntWaste&amp;text=How%20much%20water%20do%20you%20use?%20Let's%20find%20it%20out%20on&amp;hashtags=waterWaste",'_blank');
+    window.open();
 }
 
 function sharePin() {
-    window.open("http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fjackdoesntwaste.github.io%2Fwater%2F&media=https://github.com/JackDoesntWaste/water/blob/master/images/card.png?raw=true&description=Let's%20find%20it%20out%20with%20Jack%20%3A)",'_blank');
+    window.open()",'_blank');
 }
 
 function infoBox() {
